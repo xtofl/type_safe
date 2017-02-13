@@ -78,7 +78,7 @@ script:
     - ./test/type_safe_test
   - popd
   - pushd test/a_test_project
-  - $CXX -I ../../include -I ../../external/debug_assert include_all.cpp
+  - $CXX --std=c++11 -I ../../include -I ../../external/debug_assert include_all.cpp
   - popd
 
 after_success:
