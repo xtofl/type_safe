@@ -72,10 +72,11 @@ script:
   - if [[ "$BUILD_DOCS" -eq 1 ]]; then $CLANG_FORMAT -i `find . \( -name *.hpp -or -name *.cpp \) -not -path "./external/*"`; fi
   - git diff --exit-code || { echo "Files not formatted properly."; exit 1; }
 
-  - mkdir build/ && cd build/
-  - $CMAKE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_FLAGS="-Wall -Wextra -pedantic -Wno-parentheses" -DTYPE_SAFE_BUILD_TEST_EXAMPLE=ON -DTYPE_SAFE_BUILD_DOC="$BUILD_DOCS" -DTYPE_SAFE_STANDARDESE_DOWNLOAD_DIRECTORY=../../standardese/ ../
-  - $CMAKE --build .
-  - ./test/type_safe_test
+  - mkdir build/ && pushd build/
+    - $CMAKE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_FLAGS="-Wall -Wextra -pedantic -Wno-parentheses" -DTYPE_SAFE_BUILD_TEST_EXAMPLE=ON -DTYPE_SAFE_BUILD_DOC="$BUILD_DOCS" -DTYPE_SAFE_STANDARDESE_DOWNLOAD_DIRECTORY=../../standardese/ ../
+    - $CMAKE --build .
+    - ./test/type_safe_test
+  - popd
   - pushd test/a_test_project
   - $CXX -I ../../include -I ../../external/debug_assert include_all.cpp
   - popd
