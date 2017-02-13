@@ -76,6 +76,9 @@ script:
   - $CMAKE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_FLAGS="-Wall -Wextra -pedantic -Wno-parentheses" -DTYPE_SAFE_BUILD_TEST_EXAMPLE=ON -DTYPE_SAFE_BUILD_DOC="$BUILD_DOCS" -DTYPE_SAFE_STANDARDESE_DOWNLOAD_DIRECTORY=../../standardese/ ../
   - $CMAKE --build .
   - ./test/type_safe_test
+  - pushd test/a_test_project
+  - $CXX -I ../../include -I ../../external/debug_assert include_all.cpp
+  - popd
 
 after_success:
   - git config --global user.name "Travis CI"
