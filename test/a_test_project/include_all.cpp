@@ -22,4 +22,6 @@
 #include <type_safe/variant.hpp>
 #include <type_safe/visitor.hpp>
 
-
+int main()
+{
+}
