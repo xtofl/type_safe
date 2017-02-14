@@ -1,0 +1,38 @@
+https://travis-ci.org/xtofl/type_safe/builds/201410538
+
+Build Jobs
+
+ 6.1
+ Compiler: gcc C++
+ TOOLSET=g++-5 BUILD_TYPE='Release' BUILD_DOCS=1
+ 2 min 26 sec
+
+ 6.2
+ Compiler: gcc C++
+ TOOLSET=g++-4.8 BUILD_TYPE='Debug' BUILD_DOCS=0
+ 1 min 12 sec
+
+ 6.3
+ Compiler: gcc C++
+ TOOLSET=g++-4.8 BUILD_TYPE='Release' BUILD_DOCS=0
+ 1 min 16 sec
+
+ 6.4
+ Compiler: gcc C++
+ TOOLSET=g++-5 BUILD_TYPE='Debug' BUILD_DOCS=0
+ 1 min 24 sec
+
+ 6.5
+ Compiler: gcc C++
+ TOOLSET=g++-5 BUILD_TYPE='Release' BUILD_DOCS=0
+ 1 min 22 sec
+
+ 6.6
+ Compiler: clang C++
+ TOOLSET=clang++ BUILD_TYPE='Debug' BUILD_DOCS=0
+ 22 sec
+
+ 6.7
+ Compiler: clang C++
+ TOOLSET=clang++ BUILD_TYPE='Release' BUILD_DOCS=0
+ 20 sec
